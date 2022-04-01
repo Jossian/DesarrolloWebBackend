@@ -1,21 +1,144 @@
-<!doctype html>
-<html lang='en'>
-
-<head>
-    <meta charset='utf-8'>
-    <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
     <!-- Boxicons CSS -->
-    <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="stylesheet" href="static/css/estilos.css" class="">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap" rel="stylesheet">
-    <title>Hola</title>
-</head>
+    <link
+      href="https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-<body>
-    <h1>Prueba Heroku</h1>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="stylesheet" href="static/css/styles.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>GameStore</title>
+  </head>
 
-</body>
+  <body>
+    <header class="header" id="inicio">
+      <img src="img/hamburger.svg" alt="" class="hamburger" />
+      <nav class="menu-navegacion">
+        <a href="#inicio">Inicio</a>
+        <a href="#plataformas">Plataformas</a>
+        <a href="#portafolio">Juegos populares</a>
+        <a href="#expertos">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+      <div class="contenedor head">
+        <h1 class="titulo">GameStore</h1>
+        <p class="copy">
+          El mejor sitio para comparar precios de videojuegos y accesorios en diferentes tiendas en línea y con recomendaciones personalizadas
+        </p><br>
+        <div class="container-1">
+          <span class="icon"><i class="fa fa-search"></i></span>
+          <input type="search" id="search" placeholder="Search..." />
+      </div>
+      </div>
+    </header>
 
+    <main>
+      <section class="contenedor" id="plataformas">
+        <h2 class="subtitulo">Plataformas</h2>
+        <div class="contenedor-servicio">
+          <img src="../img/consoles.jpg" alt="" />
+
+          <div class="checklist-servicio">
+            <div class="service">
+              
+              <h3 class="n-service"><i class="fa-brands fa-xbox"></i> X Box</h3>
+
+              <p>
+                Puedes encontrar una gran variedad de videojuegos y accesorios para diferentes modelos
+                de X box. 
+              </p>
+            </div>
+            <div class="service">
+              <h3 class="n-service"><i class="fa-brands fa-playstation"></i> Play Station</h3>
+              <p>
+                Podrás encontrar todo lo disponible y a los mejores precios para la revolucionaria 
+                consola de Sony.
+              </p>
+            </div>
+            <div class="service">
+              <h3 class="n-service"><i class="fa-solid fa-desktop"></i> PC</h3>
+              <p>
+                Al igual que las consolas, adquirir videojuegos y accesorios para PC será más facil
+                y asequible con nuestra asesoría.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="gallery" id="portafolio">
+        <div class="contenedor">
+          <h2 class="subtitulo">Populares</h2>
+          <div class="contenedor-galeria">
+            <img src="img/gallery/1.jpg" alt="" class="img-galeria" />
+            <img src="img/gallery/2.jpg" alt="" class="img-galeria" />
+            <img src="img/gallery/3.jpg" alt="" class="img-galeria" />
+            <img src="img/gallery/4.jpg" alt="" class="img-galeria" />
+            <img src="img/gallery/5.jpg" alt="" class="img-galeria" />
+            <img src="img/gallery/6.jpg" alt="" class="img-galeria" />
+          </div>
+        </div>
+      </section>
+
+      <section class="imagen-light">
+        <img src="img/close.min.svg" alt="" class="close" />
+        <img src="" alt="" class="agregar-imagen" />
+      </section>
+
+      <section class="contenedor" id="expertos">
+        <h2 class="subtitulo">Expertos en:</h2>
+        <section class="experts">
+          <div class="cont-experts">
+            <img src="img/gallery/game.svg" alt="" />
+            <h3 class="n-expert">Juegos</h3>
+          </div>
+          <div class="cont-experts">
+            <img src="img/gallery/seo.svg" alt="" />
+            <h3 class="n-expert">Buscar y comparar</h3>
+          </div>
+          <div class="cont-experts">
+            <img src="img/gallery/payment.svg" alt="" />
+            <h3 class="n-expert">Económico y rápido</h3>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <footer id="contacto">
+      <div class="contenedor footer-content">
+        <div class="contact-us">
+          <h2 class="brand">GameStore</h2>
+          <p>Ahorra tiempo y dinero</p>
+        </div>
+        <div class="social-media">  
+          <a href="https://www.yobiss.com" class="social-media-icon">
+            <i class='bx bxl-twitter' ></i>
+          </a>
+          <a href="./" class="social-media-icon">
+            <i class='bx bxl-facebook-circle'></i>
+          </a>
+          <a href="./" class="social-media-icon">
+            <i class="bx bxl-instagram-alt bx-lg"></i>
+          </a>
+        </div>
+      </div>
+      <div class="line"></div>
+    </footer>
+
+    <script src="static/js/menu.js"></script>
+    <script src="static/js/lightbox.js"></script>
+  </body>
 </html>
