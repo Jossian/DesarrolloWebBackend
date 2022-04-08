@@ -10,11 +10,7 @@ def home():
     return render_template('index.html')
 
 
-@app.route("/login")
-def login():
-    return render_template("Login.html", error="email")
-
-@app.route("/loginuser", methods=["POST"])
+@app.route("/login", methods=["POST"])
 def loginuser():
     metodo = request.method
     email = request.form["email"]
