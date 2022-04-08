@@ -17,36 +17,23 @@ def home():
     else :
         return render_template('Login.html')
 
+@app.route('/signup')
+def signup():
+    name = request.form["name"]
+    email = request.form["email"]
+    password = request.form["password"]
+    return render_template('index.html', data=email)
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
     email = None
-    if email in session:
-        return render_template("index.html", data=session["email"])
+    if "email" in session:
+        return render_template('index.html', data=session["email"])
     else:
         if (request.method == "GET"):
             return render_template("Login.html", data="email")
         else:
-            
             email = request.form["email"]
             password = request.form["password"]
-            session["email"]=email
+            session["email"] = email
             return render_template("index.html", data=email)
-
-
-@app.route('/estructuradedatos')
-def prueba():
-    nombres = []
-    nombres.append({"nombre": "ruben",
-
-                    "Semetre01": [{
-                        "matematicas": "8",
-                        "español": "7"
-                    }],
-                    "Semetre02": [{
-                        "programacion": "5",
-                        "basededatos": "9"
-                    }]
-                    })
-
-    return render_template("home.html", data=nombres)
