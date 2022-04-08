@@ -39,7 +39,7 @@ def login():
             return render_template("index.html", data=email)
 
 
-@app.route('/loguot')
+@app.route('/logout')
 def logout():
     if "email" in session:
         session.clear()
