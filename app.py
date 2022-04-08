@@ -40,7 +40,7 @@ def login():
 
 
 @app.route('/loguot')
-def home():
+def logout():
     if "email" in session:
         session.clear()
         return redirect(url_for("home"))
