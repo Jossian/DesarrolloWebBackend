@@ -1,5 +1,5 @@
 from datetime import datetime
-from flask import Flask, render_template, request, session, url_for
+from flask import Flask, render_template, request, session, url_for, redirect
 import datetime
 # FlASK
 #############################################################
@@ -37,3 +37,12 @@ def login():
             password = request.form["password"]
             session["email"] = email
             return render_template("index.html", data=email)
+
+
+@app.route('/loguot')
+def home():
+    if "email" in session:
+        session.clear()
+        redirect(url_for("home"))
+    else :
+        redirect(url_for("home"))
