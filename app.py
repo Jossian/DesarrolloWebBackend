@@ -10,12 +10,16 @@ def home():
     return render_template('index.html')
 
 
-@app.route("/login", methods=["POST"])
-def loginuser():
-    metodo = request.method
-    email = request.form["email"]
-    password = request.form["password"]
-    return render_template("index.html", error=email)
+@app.route("/login", methods=["GET", "POST"])
+def login():
+    if (request.method == "GET"):
+        return render_template("Login.html", data="email")
+    else:
+        email = None
+        email = request.form["email"]
+        password = request.form["password"]
+        return render_template("index.html", data=email)
+
 
 @app.route('/estructuradedatos')
 def prueba():
