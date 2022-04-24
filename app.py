@@ -1,6 +1,7 @@
 from datetime import datetime
 from flask import Flask, render_template, request, session, url_for, redirect
 import datetime
+from numpy import array
 import pymongo
 from twilio.rest import Client
 from decouple import config
@@ -42,7 +43,7 @@ def signup():
     name = request.form["name"]
     email = request.form["email"]
     password = request.form["password"]
-    return render_template('index.html', data=email)
+    return render_template('index.html', data=email)########
 
 @app.route("/login", methods=["GET", "POST"])
 def login():
@@ -53,10 +54,19 @@ def login():
         if (request.method == "GET"):
             return render_template("Login.html", data="email")
         else:
-            email = request.form["email"]
+            email2 = request.form["email"]
             password = request.form["password"]
             session["email"] = email
+
+        mail = cuentas.find_one({"email": (email2)})
+        passw = cuentas.find_one({"password": (password)})
+        if (mail==None or passw==None):
+            return "<p> No existe email</p>"
+        elif (mail==passw):
             return render_template("index.html", data=email)
+        else:
+            return "<p> No existe email</p>"
+
 
 
 @app.route('/logout')
@@ -80,17 +90,17 @@ def usuarios():
 @app.route("/insert", methods=["POST"])
 def insertUsers():
     user = {
-        "matricula": request.form["matricula"],
-        "nombre": request.form["nombre"],
-        "correo": request.form["correo"],
-        "contrasena": request.form["contrasena"],
+        #"matricula": request.form["matricula"],
+        "name": request.form["name"],
+        "email": request.form["email"],
+        "password": request.form["password"],
     }
     try:
         cuentas.insert_one(user)
         comogusten = TwilioClient.messages.create(
             from_="whatsapp:+14155238886",
             body="El usuario %s se agregó a tu pagina web" % (
-                request.form["nombre"]),
+                request.form["name"]),
             to="whatsapp:+5215543898573"
         )
         print(comogusten.sid)
