@@ -15,9 +15,8 @@
                 <input type="text" name="name" placeholder="Name" />
                 <input type="email" name="email" placeholder="Email" />
                 <input type="password" name="password" placeholder="Password" />
-                <!---<button>Sign Up</button>-->
-                <input type="submit" value="Sign Up" class="btn btn-primary" />
-                
+                <button>Sign Up</button>
+                 
                 
             </form>
         </div>
@@ -29,6 +28,9 @@
                 <input type="password" name="password" placeholder="Password" />
                 <!-- <a href="#">Forgot your password?</a> -->
                 <button type="submit">Sign In</button>
+                {% if data %}  
+                    <p>Email o contraseña no valido</p>  
+                {% endif %} 
             </form>
         </div>
         <div class="overlay-container">

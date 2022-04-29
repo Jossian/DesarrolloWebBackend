@@ -28,7 +28,6 @@ auth_token = config('auth_token')
 TwilioClient = Client(account_sid, auth_token)
 #############################################################
 
-
 @app.route('/')
 def home():
     email=None
@@ -61,7 +60,7 @@ def login():
         mail = cuentas.find_one({"email": (email2)})
         passw = cuentas.find_one({"password": (password)})
         if (mail==None or passw==None):
-            return "<p> No existe email</p>"
+            return render_template("Login.html", data=True)
         elif (mail==passw):
             return render_template("index.html", data=email)
         else:
@@ -97,6 +96,7 @@ def insertUsers():
     }
     try:
         cuentas.insert_one(user)
+        print("se agregó usuario")
         comogusten = TwilioClient.messages.create(
             from_="whatsapp:+14155238886",
             body="El usuario %s se agregó a tu pagina web" % (
