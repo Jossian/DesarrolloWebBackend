@@ -1,7 +1,7 @@
 from datetime import datetime
 from flask import Flask, render_template, request, session, url_for, redirect
 import datetime
-from numpy import array
+#from numpy import array
 import pymongo
 from twilio.rest import Client
 from decouple import config
