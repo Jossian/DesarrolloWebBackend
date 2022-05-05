@@ -77,14 +77,15 @@ def logout():
         return redirect(url_for("home"))
 
 
-@app.route("/usuarios", methods=["GET"])
+@app.route("/usuarios")
 def usuarios():
     cursor=cuentas.find({})     #nos permite encontrar todo lo que haya en el documento (Alumnos)
     #for para indagar
     users=[]
     for doc in cursor:
         users.append(doc)
-    return render_template("/Usuarios.html", data=users)    #crea template
+    return render_template("Usuarios.html", data=users)    #crea template
+
 
 @app.route("/insert", methods=["POST"])
 def insertUsers():
