@@ -77,7 +77,7 @@ def logout():
         return redirect(url_for("home"))
 
 
-@app.route("/usuarios")
+@app.route("/usuarios", methods=["GET"])
 def usuarios():
     cursor=cuentas.find({})     #nos permite encontrar todo lo que haya en el documento (Alumnos)
     #for para indagar
