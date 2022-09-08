@@ -16,9 +16,9 @@ app.secret_key="super secret key"
 #Conectarnos a la base de datos
 #############################################################
 mongodb_key =config('mongodb_key')
-client=pymongo.MongoClient(mongodb_key, tls=True, tlsAllowInvalidCertificates=True) #crea un cliente
-db=client.Escuela #conecta a la base de datos escuela
-cuentas=db.alumno
+client = pymongo.MongoClient("mongodb+srv://desarrollowebuser:<password>@cluster0.fawkcnh.mongodb.net/?retryWrites=true&w=majority")
+db = client.Escuela
+cuentas=db.Alumno
 
 #############################################################
 # Twilio
