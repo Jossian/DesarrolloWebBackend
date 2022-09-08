@@ -30,12 +30,7 @@ TwilioClient = Client(account_sid, auth_token)
 
 @app.route('/')
 def home():
-    email=None
-    if "email" in session:
-        email=session["email"]
-        return render_template('index.html')
-    else :
-        return render_template('Login.html')
+    return render_template('index.html')
 
 @app.route('/signup', methods=["POST"])
 def signup():
