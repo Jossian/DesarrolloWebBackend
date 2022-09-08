@@ -62,7 +62,7 @@ def login():
         if (mail==None or passw==None):
             return render_template("Login.html", data=True)
         elif (mail==passw):
-            return render_template("index.html", data=email)
+            return render_template("index.html", data=email2)
         else:
             return "<p> No existe email</p>"
 
