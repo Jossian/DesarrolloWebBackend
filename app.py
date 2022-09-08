@@ -16,7 +16,7 @@ app.secret_key="super secret key"
 #Conectarnos a la base de datos
 #############################################################
 mongodb_key =config('mongodb_key')
-client = pymongo.MongoClient("mongodb+srv://desarrollowebuser:<password>@cluster0.fawkcnh.mongodb.net/?retryWrites=true&w=majority")
+client = pymongo.MongoClient("mongodb+srv://desarrollowebuser:<desarrollowebpassword>@cluster0.fawkcnh.mongodb.net/?retryWrites=true&w=majority")
 db = client.Escuela
 cuentas=db.Alumno
 
